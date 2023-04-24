@@ -6,3 +6,9 @@ Logins and passwords for them are in the usersList.php file
 * Passwords are stored encrypted
 
 * When entering the correct login-password combination, the user enters his personal account.
+
+***
+
+How to open...
+
+* You can open the file with Open Server Panel
