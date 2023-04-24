@@ -80,6 +80,20 @@ if ($auth) {
     }
 
 
+    if (isset($_COOKIE['offerPromoAdmin']) && $_SESSION['login'] == 'admin' ) {
+        $offerPromo = $_COOKIE['offerPromoAdmin'];  
+
+    } else if (isset($_COOKIE['offerPromoUser']) && $_SESSION['login'] == 'user' ) {
+        $offerPromo = $_COOKIE['offerPromoUser'];  
+
+    } else if (isset($_COOKIE['offerPromoUIvan']) && $_SESSION['login'] == 'ivan' ) {
+        $offerPromo = $_COOKIE['offerPromoIvan'];  
+        
+    } else if (isset($_COOKIE['offerPromoWaldy']) && $_SESSION['login'] == 'waldy' ) {
+        $offerPromo = $_COOKIE['offerPromoWaldy'];  
+    }
+
+
     $datetime3 = new DateTime(date("H:i:s"));
     $datetime4 = new DateTime('23:59:59');
     $interval2 = $datetime3->diff($datetime4);
@@ -92,16 +106,16 @@ if ($auth) {
             <br>
             <div class="promotion">
                 <p>You entered the Site at:<br><span ><?php echo $_SESSION['visit'];?></span></p>
-                <p>Promotion Time<br><span style="font-size: 18px; text-align: center;"><?php echo $offer ?></span></p>
+                <p>5% personal discount on all salon services.</p>
                 <p><a href="#" alt='<?php include 'usersList.php'; echo $img[$offer]?>'><img src="<?php include 'usersList.php'; echo $img[$offer]?>" width="150" height="80"></a><br><?php echo $interval2->format(' %h h. %i min. %s sek.'); ?></p>
             </div>
         <div>
             <?php
                 include 'usersList.php';
-                $date = date('d.m');
-                if (sha1($date) == $usersList[$_SESSION['login']]['bday2']) { ?>
-                    <p>Your birthday offer<br> 50% discount for<br><span style="font-size: 18px; text-align: center;"><?php echo $_COOKIE['offerPromotion'] ?></span></p>
-                    <p><a href="#" alt='<?php echo $_COOKIE['offerPromotion'] ?>'><img src="<?php include 'usersList.php'; echo $img[$_COOKIE['offerPromotion']]?>" width="150" height="80"></a><br><?php echo $interval2->format(' %h h. %i min. %s sek.'); ?></p>
+                $date = date('d.m.Y');
+                if (isset($_SESSION['today']) && substr($date,0,5) == substr($_SESSION['today'],0,5)) { ?>
+                    <p>Your birthday offer<br> 50% discount for<br><span style="font-size: 18px; text-align: center;"><?php echo $offerPromo?></span></p>
+                    <p><a href="#" alt='<?php echo $offerPromo?>'><img src="<?php include 'usersList.php'; echo $img[$offerPromo] ?>" width="150" height="80"></a><br><?php echo $interval2->format(' %h h. %i min. %s sek.'); ?></p>
              <?php } ?>
             </div>
             <form action="index.php" method = "post">

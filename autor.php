@@ -22,6 +22,7 @@ if (getCurrentUser ($userLogin, $userPassword, getUsersList($usersList))) {
     $_SESSION['password'] = $userPassword;
     $_SESSION['ini'] = null;
     setcookie('offer',array_search(imgRand($keyRandom, $img),$img ));
+
     } else {
     session_start();
     $new_url = 'http://localhost/';
@@ -37,6 +38,7 @@ if ($auth && $_SESSION['login'] == 'admin') {
         $visitTime = date("H:i:s");
         setcookie('visitAdmin', $visitTime, time() + 86400);
         setcookie('offerAdmin', array_search(imgRand($keyRandom, $img),$img ), time() + 86400);
+        setcookie('offerPromoAdmin', array_search(imgRand($keyRandom, $img),$img ), time() + 86400);
     }
 ?>
 <!DOCTYPE html>
@@ -115,6 +117,7 @@ if ($auth && $_SESSION['login'] == 'waldy') {
         $visitTime = date("H:i:s");
         setcookie('visitWaldy', $visitTime, time() + 86400);
         setcookie('offerWaldy', array_search(imgRand($keyRandom, $img),$img ), time() + 86400);
+        setcookie('offerPromoWaldy', array_search(imgRand($keyRandom, $img),$img ), time() + 86400);
     }
 ?>
 <!DOCTYPE html>
@@ -192,6 +195,7 @@ if ($auth && $_SESSION['login'] == 'ivan') {
         $visitTime = date("H:i:s");
         setcookie('visitIvan', $visitTime, time() + 86400);
         setcookie('offerIvan', array_search(imgRand($keyRandom, $img),$img ), time() + 86400);
+        setcookie('offerPromoIvan', array_search(imgRand($keyRandom, $img),$img ), time() + 86400);
     }
 ?>
 <!DOCTYPE html>
@@ -271,6 +275,7 @@ if ($auth && $_SESSION['login'] == 'user') {
         $visitTime = date("H:i:s");
         setcookie('visitUser', $visitTime, time() + 86400);
         setcookie('offerUser', array_search(imgRand($keyRandom, $img),$img ), time() + 86400);
+        setcookie('offerPromoUser', array_search(imgRand($keyRandom, $img),$img ), time() + 86400);
     }
 
 ?>

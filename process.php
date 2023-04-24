@@ -33,6 +33,10 @@ if(isset($_POST['birthday']) && !$birdDay) {
     session_start();
     $_SESSION['bday'] = 'Please enter your birthday correctly';
 }
+if (isset($_POST['birthday'])) {
+    session_start();
+    $_SESSION['today'] = $_POST['birthday'];
+}
 
 /* die Funktion getUsersList() gibt ein Array aller Benutzer und ihrer Passwort-Hashes zurück (функция getUsersList() возвращает массив всех пользователей и хэшей их паролей). */
 function getUsersList ($array) {
