@@ -1,0 +1,41 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header-main {
+    height:71px;
+    background-color: black;
+    text-align: center;
+    color: aliceblue;
+    font-size: 34px;
+    padding-top: 33px;
+    letter-spacing: 3px;
+}
+.container-main {
+    background-image: url('/img/image.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 600px;
+    width: 1530px;
+    margin: 20px auto;
+}
+
+.forma-box {
+    padding: 20px 10px 10px 10px;
+    float: left;
+    height: 570px;
+    width: 187px;
+    background-color: lightgrey;
+    text-align: center;
+}
+.img-box {
+    float: right;
+    margin-top: 50px;
+    padding: 20px 10px 10px 10px;
+    height: 570px;
+    width: 187px;
+    background-color: lightgrey;
+    text-align: center;
+    margin: 0 auto;
+}
